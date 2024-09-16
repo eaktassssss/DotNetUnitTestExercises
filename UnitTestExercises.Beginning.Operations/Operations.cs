@@ -23,7 +23,7 @@
                 return false;
         }
         #endregion
-        #region Kullanıcı Kayıt İşlemi, Kullanıcı adı boş olamaz, parola en az 6 karakter ise True Değil ise False
+        #region Kullanıcı Kayıt İşlemi, Kullanıcı adı uygun (not empty not null), parola en az 6 karakter ise True Değil ise False
 
         public bool ValidateUserRegistration(string userName, string password)
         {
