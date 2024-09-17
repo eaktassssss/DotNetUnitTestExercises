@@ -1,8 +1,31 @@
-﻿namespace UnitTestExercises.Beginning.Operations
+﻿using UnitTestExercises.Beginning.Models;
+
+namespace UnitTestExercises.Beginning.Operations
 {
     public class Operations
     {
-        #region Oyun Kayıt, gameName boş değil, price 0 dan küçük değil,
+        #region Siparişin toplam tutarını hesaplama. Siparişler bir fiyat ve adet içerir. Toplam sipariş tutarı, her ürünün fiyatı ile miktarının çarpımından elde edilir.
+        public decimal CalculateOrderTotal(List<OrderItem> orderItems)
+        {
+            decimal total = 0;
+
+            if (orderItems == null)
+                return 0;
+
+            foreach (var item in orderItems)
+            {
+                if (item.Quantity < 0)
+                    throw new ArgumentException("Quantity cannot be negative!");
+
+                if(item.Price<0)
+                    throw new ArgumentException("Price cannot be negative!");
+
+                total += item.Price*item.Quantity;
+            }
+            return total;
+        }
+        #endregion
+        #region Oyun Kayıt, gameName boş değil, price 0 dan küçük değil
         public bool CreateGame(string gameName, decimal price)
         {
             if (string.IsNullOrEmpty(gameName))
@@ -37,4 +60,7 @@
         }
         #endregion
     }
+
+   
+
 }
