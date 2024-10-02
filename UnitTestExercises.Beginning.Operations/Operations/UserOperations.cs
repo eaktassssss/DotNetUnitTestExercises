@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UnitTestExercises.Beginning.Operations.Operations
+﻿namespace UnitTestExercises.Beginning.Operations.Operations
 {
-    public  class UserOperations
+    public class UserOperations
     {
         #region Kullanıcı Kayıt İşlemi, Kullanıcı adı uygun (not empty not null), parola en az 6 karakter ise True Değil ise False
 
@@ -20,6 +14,7 @@ namespace UnitTestExercises.Beginning.Operations.Operations
 
             return true;
         }
-        #endregion
+
+        #endregion Kullanıcı Kayıt İşlemi, Kullanıcı adı uygun (not empty not null), parola en az 6 karakter ise True Değil ise False
     }
 }

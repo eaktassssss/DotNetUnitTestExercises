@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UnitTestExercises.Beginning.Operations.Operations
+﻿namespace UnitTestExercises.Beginning.Operations.Operations
 {
-    public  class DiscountOperations
+    public class DiscountOperations
     {
         #region Müşteri İndirim Uygunluğu, Toplam Satın Alma 500 üzeri ise True Değil ise False
+
         public bool IsEligibleForDiscount(decimal totalPurchase)
         {
             if (totalPurchase >= 500)
@@ -16,6 +11,7 @@ namespace UnitTestExercises.Beginning.Operations.Operations
             else
                 return false;
         }
-        #endregion
+
+        #endregion Müşteri İndirim Uygunluğu, Toplam Satın Alma 500 üzeri ise True Değil ise False
     }
 }

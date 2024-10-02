@@ -1,12 +1,10 @@
-﻿
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using MediatR;
 using UnitTestExercises.Application.Commands;
 using UnitTestExercises.Application.Queries;
+
 namespace UnitTestExercises.Host.Controllers
 {
-
-
     [ApiController]
     [Route("")]
     public class ProductController : ControllerBase
@@ -183,5 +181,4 @@ namespace UnitTestExercises.Host.Controllers
             return BadRequest("Ürünler toplu olarak güncellenemedi.");
         }
     }
-
 }

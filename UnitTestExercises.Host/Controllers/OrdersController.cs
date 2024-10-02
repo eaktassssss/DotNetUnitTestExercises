@@ -1,10 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using UnitTestExercises.Application.Commands;
 using UnitTestExercises.Application.Queries;
+
 namespace UnitTestExercises.Host.Controllers
 {
-
     [ApiController]
     [Route("")]
     public class OrderController : ControllerBase
@@ -259,8 +259,4 @@ namespace UnitTestExercises.Host.Controllers
             return BadRequest("Satýþý düþük ürünler satýþtan kaldýrýlamadý.");
         }
     }
-
-
-
-
 }

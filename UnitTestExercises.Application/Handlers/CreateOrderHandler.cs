@@ -1,12 +1,6 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnitTestExercises.Application.Commands;
 using UnitTestExercises.Application.Models;
-using UnitTestExercises.Core.Entities;
 using UnitTestExercises.Core.Enums;
 using UnitTestExercises.Core.Services;
 
@@ -25,7 +19,6 @@ namespace UnitTestExercises.Application.Handlers
         {
             var newOrder = new OrderModel
             {
-
                 CustomerId = request.CustomerId,
                 Items = request.Items.Select(i => new OrderItemModel
                 {
@@ -37,9 +30,8 @@ namespace UnitTestExercises.Application.Handlers
                 OrderStatus = OrderStatus.Pending
             };
 
-             _orderService.CreateOrder(newOrder);
+            _orderService.CreateOrder(newOrder);
             return true;
         }
     }
-
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UnitTestExercises.Core.Enums
+﻿namespace UnitTestExercises.Core.Enums
 {
     public enum OrderStatus
     {
@@ -38,5 +32,4 @@ namespace UnitTestExercises.Core.Enums
         /// </summary>
         Delivered = 5,
     }
-
 }

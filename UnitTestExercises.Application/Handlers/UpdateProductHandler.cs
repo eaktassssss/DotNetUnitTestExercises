@@ -1,13 +1,7 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnitTestExercises.Application.Commands;
 using UnitTestExercises.Application.Models;
 using UnitTestExercises.Application.Services;
-using UnitTestExercises.Core.Services;
 
 namespace UnitTestExercises.Application.Handlers
 {
@@ -33,5 +27,4 @@ namespace UnitTestExercises.Application.Handlers
             return _productService.UpdateProduct(product);
         }
     }
-
 }

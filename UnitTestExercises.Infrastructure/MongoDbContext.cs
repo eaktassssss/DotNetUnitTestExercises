@@ -12,6 +12,7 @@ namespace UnitTestExercises.Infrastructure
             var client = new MongoClient(settings.ServerUrl);
             _database = client.GetDatabase(settings.DatabaseName);
         }
+
         public IMongoCollection<Order> Orders
         {
             get

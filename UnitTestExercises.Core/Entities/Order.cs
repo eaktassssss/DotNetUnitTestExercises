@@ -1,10 +1,5 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnitTestExercises.Core.Enums;
 
 namespace UnitTestExercises.Core.Entities
@@ -14,10 +9,11 @@ namespace UnitTestExercises.Core.Entities
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
+
         public int CustomerId { get; set; }
         public List<OrderItem> OrderItems { get; set; }
         public decimal TotalAmount { get; set; }
-        public OrderStatus OrderStatus { get; set; }  
+        public OrderStatus OrderStatus { get; set; }
         public DateTime OrderDate { get; set; }
 
         public void CalculateTotal()

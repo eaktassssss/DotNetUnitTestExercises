@@ -1,6 +1,4 @@
-﻿
-
-namespace UnitTestExercises.Infrastructure.Implementations.Repositories
+﻿namespace UnitTestExercises.Infrastructure.Implementations.Repositories
 {
     using MongoDB.Driver;
     using UnitTestExercises.Application.Interfaces.Repositories;
@@ -26,7 +24,6 @@ namespace UnitTestExercises.Infrastructure.Implementations.Repositories
             {
                 return false;
             }
-
         }
 
         public Product GetById(string id)
@@ -63,8 +60,6 @@ namespace UnitTestExercises.Infrastructure.Implementations.Repositories
             {
                 return false;
             }
-
         }
     }
-
 }

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnitTestExercises.Beginning.Operations.Operations;
-
-namespace UnitTestExercises.Beginning.Operations.Tests.Tests.OperationTests
+﻿namespace UnitTestExercises.Beginning.Operations.Tests.Tests.OperationTests
 {
     public class DiscountOperationTests
     {

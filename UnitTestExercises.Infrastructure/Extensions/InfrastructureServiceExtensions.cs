@@ -13,10 +13,9 @@ namespace UnitTestExercises.Infrastructure.Extensions
         public static IServiceCollection AddMongoDbRepositoriesAndServices(this IServiceCollection services, IConfiguration configuration)
         {
             var mongoDbSettings = new MongoDbSettings();
-            configuration.GetSection("MongoDbSettings").Bind(mongoDbSettings);    
+            configuration.GetSection("MongoDbSettings").Bind(mongoDbSettings);
             services.AddSingleton(mongoDbSettings);
 
-            
             services.AddSingleton<MongoDbContext>();
 
             services.AddScoped<IOrderRepository, OrderRepository>();

@@ -6,7 +6,6 @@ using UnitTestExercises.Core.Services;
 
 namespace UnitTestExercises.Infrastructure.Implementations.Services
 {
-
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _orderRepository;
@@ -52,7 +51,6 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
             };
 
             return _orderRepository.Add(newOrder);
-
         }
 
         public OrderModel GetOrderById(string id)
@@ -137,7 +135,6 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
 
             existingOrder.OrderStatus = OrderStatus.Cancelled;
             return _orderRepository.Update(existingOrder);
-
         }
 
         public bool CompleteOrder(string orderId)
@@ -160,7 +157,6 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
             return _orderRepository.Update(existingOrder);
         }
 
-
         public bool UpdateOrderItems(string orderId, List<OrderItemModel> updatedItems)
         {
             var existingOrder = _orderRepository.GetById(orderId);
@@ -181,7 +177,6 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
 
             existingOrder.TotalAmount = updatedItems.Sum(i => i.Price * i.Quantity);
             return _orderRepository.Update(existingOrder);
-
         }
 
         public bool ChangeOrderStatus(string orderId, OrderStatus newStatus)
@@ -191,9 +186,7 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
 
             existingOrder.OrderStatus = newStatus;
             return _orderRepository.Update(existingOrder);
-
         }
-
 
         public bool RefundOrder(string orderId)
         {
@@ -202,7 +195,6 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
 
             existingOrder.OrderStatus = OrderStatus.Refunded;
             return _orderRepository.Update(existingOrder);
-
         }
 
         public bool ReopenOrder(string orderId)
@@ -212,7 +204,6 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
 
             existingOrder.OrderStatus = OrderStatus.Pending;
             return _orderRepository.Update(existingOrder);
-
         }
 
         public bool DeleteOrder(string orderId)
@@ -221,9 +212,7 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
             if (existingOrder == null) return false;
 
             return _orderRepository.Delete(orderId);
-
         }
-
 
         public bool ProcessOrderInStages(string orderId, List<OrderStatus> stages)
         {
@@ -242,8 +231,9 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
 
             return true;
         }
+
         /// <summary>
-        /// Eğer stok belirli bir eşiğin altına düşerse fiyat artırılır, eğer stok fazlaysa fiyat indirilir. 
+        /// Eğer stok belirli bir eşiğin altına düşerse fiyat artırılır, eğer stok fazlaysa fiyat indirilir.
         /// </summary>
         /// <param name="productId"></param>
         /// <param name="lowStockThreshold"></param>
@@ -301,10 +291,7 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
             if (!existingOrder.OrderItems.Any()) existingOrder.OrderStatus = OrderStatus.Completed;
 
             return _orderRepository.Update(existingOrder);
-
         }
-
-
 
         public bool ReturnOrder(string orderId, List<OrderItemModel> returnedItems)
         {
@@ -331,9 +318,7 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
             }
             existingOrder.OrderStatus = OrderStatus.Refunded;
             return _orderRepository.Update(existingOrder);
-
         }
-
 
         /// <summary>
         /// Satışı az olan ürünleri otomatik olarak devre dışı bırakır (discontinue)
@@ -356,7 +341,5 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
             }
             return true;
         }
-
     }
-
 }

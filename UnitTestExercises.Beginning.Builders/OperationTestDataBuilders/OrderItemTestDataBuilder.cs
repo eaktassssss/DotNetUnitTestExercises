@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnitTestExercises.Beginning.Models;
+﻿using UnitTestExercises.Beginning.Models;
 
 namespace UnitTestExercises.Beginning.Builders.OperationTestDataBuilders
 {
     public class OrderItemTestDataBuilder
     {
-        public  List<OrderItem> OrderOperation_CalculateOrderTotal_SingleItemOrder()
+        public List<OrderItem> OrderOperation_CalculateOrderTotal_SingleItemOrder()
         {
             return new List<OrderItem>
             {
@@ -19,9 +14,9 @@ namespace UnitTestExercises.Beginning.Builders.OperationTestDataBuilders
                     Quantity=5,
                 }
             };
-
         }
-        public  List<OrderItem> OrderOperation_CalculateOrderTotal_MultipleItemsOrder()
+
+        public List<OrderItem> OrderOperation_CalculateOrderTotal_MultipleItemsOrder()
         {
             return new List<OrderItem>
             {
@@ -34,17 +29,15 @@ namespace UnitTestExercises.Beginning.Builders.OperationTestDataBuilders
                 {
                     Price=200,
                     Quantity=2
-
                 },
                 new OrderItem()
                 {
                     Price=300,
                      Quantity=2,
-
                 }
             };
-
         }
+
         public List<OrderItem> OrderOperation_CanProcessOrder()
         {
             var orderItems = new List<OrderItem>
@@ -69,7 +62,6 @@ namespace UnitTestExercises.Beginning.Builders.OperationTestDataBuilders
                 }
             };
             return orderItems;
-
         }
     }
 }

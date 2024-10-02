@@ -1,6 +1,4 @@
-﻿
-using SharpCompress.Archives;
-using UnitTestExercises.Application.Interfaces.Repositories;
+﻿using UnitTestExercises.Application.Interfaces.Repositories;
 using UnitTestExercises.Application.Models;
 using UnitTestExercises.Application.Services;
 using UnitTestExercises.Core.Entities;
@@ -29,16 +27,13 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
                 Name = product.Name,
                 Price = product.Price,
                 StockQuantity = product.StockQuantity
-
             };
 
             return _productRepository.Add(newProduct);
-
         }
 
         public ProductModel GetProductById(string id)
         {
-
             var existingProduct = _productRepository.GetById(id);
             if (existingProduct == null) return null;
 
@@ -75,7 +70,6 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
             existingProduct.StockQuantity = product.StockQuantity;
 
             return _productRepository.Update(existingProduct);
-
         }
 
         public bool DeleteProduct(string id)
@@ -86,8 +80,6 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
             return _productRepository.Delete(id);
         }
 
-
-
         public bool RestockProduct(string productId, int quantity)
         {
             var product = _productRepository.GetById(productId);
@@ -95,7 +87,6 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
 
             product.StockQuantity += quantity;
             return _productRepository.Update(product);
-
         }
 
         public bool DiscountProduct(string productId, decimal discountPercentage)
@@ -105,7 +96,6 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
 
             product.Price -= product.Price * (discountPercentage / 100);
             return _productRepository.Update(product);
-
         }
 
         public IEnumerable<ProductModel> GetOutOfStockProducts()
@@ -124,15 +114,11 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
             var product = _productRepository.GetById(productId);
             if (product == null) return false;
 
-
             product.StockQuantity = 0;
             product.Price = 0;
             product.IsArchived = true;
             return _productRepository.Update(product);
-
         }
-
-
 
         public bool BulkUpdateProducts(List<ProductModel> products)
         {
@@ -160,6 +146,5 @@ namespace UnitTestExercises.Infrastructure.Implementations.Services
             }
             return true;
         }
-
     }
 }

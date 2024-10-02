@@ -4,7 +4,6 @@ using UnitTestExercises.Core.Entities;
 
 namespace UnitTestExercises.Infrastructure.Implementations.Repositories
 {
-
     public class OrderRepository : IOrderRepository
     {
         private readonly MongoDbContext _context;
@@ -16,14 +15,12 @@ namespace UnitTestExercises.Infrastructure.Implementations.Repositories
 
         public bool Add(Order order)
         {
-           
-           
             try
             {
                 _context.Orders.InsertOne(order);
                 return true;
             }
-            catch  
+            catch
             {
                 return false;
             }
@@ -50,7 +47,6 @@ namespace UnitTestExercises.Infrastructure.Implementations.Repositories
             {
                 return false;
             }
-    
         }
 
         public bool Delete(string id)
@@ -60,12 +56,10 @@ namespace UnitTestExercises.Infrastructure.Implementations.Repositories
                 _context.Orders.DeleteOne(o => o.Id == id);
                 return true;
             }
-            catch  
+            catch
             {
                 return false;
             }
-
         }
     }
-
 }

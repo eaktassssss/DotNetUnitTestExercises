@@ -26,6 +26,7 @@
   <ItemGroup>
     <Folder Include="HandlerTests\" />
     <Folder Include="RepositoryTests\" />
+    <Folder Include="ServiceTests\" />
   </ItemGroup>
 
   <ItemGroup>

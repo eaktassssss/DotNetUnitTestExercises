@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnitTestExercises.Beginning.Builders.OperationTestDataBuilders;
+﻿using UnitTestExercises.Beginning.Builders.OperationTestDataBuilders;
 using UnitTestExercises.Beginning.Models;
 using UnitTestExercises.Beginning.Operations.Operations;
+
 namespace UnitTestExercises.Beginning.Operations.Tests.Tests.OperationTests
 {
-    public  class OrderOperationTests
+    public class OrderOperationTests
     {
-        OrderOperations orderOperations= new OrderOperations();
-        OrderItemTestDataBuilder dataBuilder = new OrderItemTestDataBuilder();
-        #region Order Tests
-  
+        private OrderOperations orderOperations = new OrderOperations();
+        private OrderItemTestDataBuilder dataBuilder = new OrderItemTestDataBuilder();
 
+        #region Order Tests
 
         [Theory]
         [InlineData(24)]
         public void CanProcessOrder_ValidOrder_ReturnsTrue(decimal minimumOrderAmount)
         {
-
             var orderItems = new List<OrderItem>
             {
                 new OrderItem
@@ -43,14 +37,14 @@ namespace UnitTestExercises.Beginning.Operations.Tests.Tests.OperationTests
                 }
             };
 
-        var result = orderOperations.CanProcessOrder(orderItems, minimumOrderAmount);
+            var result = orderOperations.CanProcessOrder(orderItems, minimumOrderAmount);
 
             Assert.True(result);
         }
 
         [Theory]
         [InlineData(30)]
-        public void CanProcessOrder_TotalBelowMinimum_ReturnsFalse(decimal minimumOrderAmount) 
+        public void CanProcessOrder_TotalBelowMinimum_ReturnsFalse(decimal minimumOrderAmount)
         {
             var orderItems = dataBuilder.OrderOperation_CanProcessOrder();
 
@@ -58,6 +52,7 @@ namespace UnitTestExercises.Beginning.Operations.Tests.Tests.OperationTests
 
             Assert.False(result);
         }
+
         [Theory]
         [InlineData(30)]
         public void CanProcessOrder_QuantityExceedsStock_ReturnsFalse(decimal minimumOrderAmount)
@@ -124,8 +119,8 @@ namespace UnitTestExercises.Beginning.Operations.Tests.Tests.OperationTests
         [InlineData(20)]
         public void CanProcessOrder_NullOrderItems_ReturnsFalse(decimal minimumOrderAmount)
         {
-            List<OrderItem>? orderItems =null;
-            
+            List<OrderItem>? orderItems = null;
+
             var result = orderOperations.CanProcessOrder(orderItems, minimumOrderAmount);
 
             Assert.False(result);
@@ -190,6 +185,7 @@ namespace UnitTestExercises.Beginning.Operations.Tests.Tests.OperationTests
             var result = orderOperations.CanProcessOrder(orderItems, minimumOrderAmount);
             Assert.False(result);
         }
-        #endregion
+
+        #endregion Order Tests
     }
 }
