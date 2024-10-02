@@ -11,6 +11,8 @@ namespace UnitTestExercises.Beginning.Operations.Tests.Tests.OperationTests
 
         #region Order Tests
 
+
+
         [Theory]
         [InlineData(24)]
         public void CanProcessOrder_ValidOrder_ReturnsTrue(decimal minimumOrderAmount)
